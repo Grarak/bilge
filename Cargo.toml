@@ -39,7 +39,7 @@ nightly = ["arbitrary-int/const_convert_and_const_trait_impl", "bilge-impl/night
 
 [dependencies]
 # cargo clippy workaround, we can't add `path = "../arbitrary-int"` as well
-arbitrary-int = { version = "1.2.6" }
+arbitrary-int = { git = "https://github.com/Grarak/arbitrary-int.git" }
 bilge-impl = { version = "=0.2.0", path = "bilge-impl" }
 
 [dev-dependencies]
