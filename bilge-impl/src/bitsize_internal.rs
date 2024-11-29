@@ -143,6 +143,7 @@ fn generate_getter(field: &Field, offset: &TokenStream, name: &Ident) -> TokenSt
             #(#attrs)*
             #[allow(clippy::type_complexity, unused_parens)]
             #vis #const_ fn #name(&self, index: usize) -> #elem_ty {
+                ::core::debug_assert!(index < #len_expr);
                 #getter_value
             }
         }
@@ -180,6 +181,7 @@ fn generate_setter(field: &Field, offset: &TokenStream, name: &Ident) -> TokenSt
             #(#attrs)*
             #[allow(clippy::type_complexity, unused_parens)]
             #vis #const_ fn #name(&mut self, index: usize, value: #elem_ty) {
+                ::core::debug_assert!(index < #len_expr);
                 #setter_value
             }
         }
